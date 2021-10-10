@@ -2,7 +2,7 @@
 //penman: Vivek
 
 include('simple_html_dom.php');//include_once was used
-$html = file_get_html('http://alkabir.in/index.php/facilities/downloads/category/2-results.html');
+$html = file_get_html('files/resultspage.html');
 $html2 = $html->find('a.jd_download_url');
 $title[] = array();
 $linktext[] = array();                 

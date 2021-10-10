@@ -3,7 +3,7 @@
 //this can grab important updates
 
 include('simple_html_dom.php');
-$html = file_get_html('http://alkabir.in/index.php/component/k2/itemlist/category/4-imp-updates-hp-right.html');
+$html = file_get_html('files/impupdatespage.html');
 $title[] = array();
 $linktext[] = array();
 $html2 = array();
