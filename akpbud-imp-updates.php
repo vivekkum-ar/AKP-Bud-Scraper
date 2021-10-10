@@ -21,7 +21,10 @@ $linktext = array_filter($linktext);
 
 for($k=0;$k<=sizeof($title);$k++)
 {
-$f[$k]=array_merge(array_combine(array('title'),@array($title[$k])),(array_combine(array('link'),@array($linktext[$k]))));
+$f[$k]=array_merge(array_combine(array('index'),@array($k))
+				  ,array_combine(array('title'),@array($title[$k]))
+				  ,array_combine(array('link'),@array($linktext[$k]))
+				  );
 }
 print_r(json_encode(array_slice($f,1)));
 ?>

@@ -4,20 +4,15 @@ include('simple_html_dom.php');
 $html = file_get_html(htmlspecialchars($_GET["pageurl"]));
 $html2 = $html->find('a.jd_download_url');
 $title[] = array();
-$linktext[] = array();
+$linktext[] = array();                
+$f[] =array();
 for ($i = 0; $i < sizeof($html2); $i++) {
-	$title[$i] = $html2[$i]->innertext;
-	$linktext[$i] = "https://alkabir.in/index.php" . $html2[$i]->href;
+	$f[$i] = array_merge(array_combine(array('index'),@array($i + 1))
+	,array_combine(array('title'),@array($html2[$i]->innertext))
+	,array_combine(array('hrefLink'),@array("https://alkabir.in/index.php" . $html2[$i]->href)));
 }
-echo json_encode(array_combine("title",$title),array_combine("HrefLink",$linktext));
+print_r(json_encode($f));
 /*
 *how to use ==== *phpfilelink*.php?pageurl=https://alkabir.in/index.php/facilities/downloads/category/3-notifications.html?start=60
-
-* returns JSON as
-* [
-*	{item1:itemHrefLink1}
-*	,{item1:itemHrefLink1}
-*	, ..................
-* ]
 */
 ?>
