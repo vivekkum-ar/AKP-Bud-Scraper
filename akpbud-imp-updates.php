@@ -1,8 +1,9 @@
-
 <?php
+//penman: Vivek
 //this can grab important updates
+
 include('simple_html_dom.php');
-$html = file_get_html('http://alkabir.in/index.php/component/k2/itemlist/category/4-imp-updates-hp-right.html'); //htmlspecialchars($_GET["pageurl"])
+$html = file_get_html('http://alkabir.in/index.php/component/k2/itemlist/category/4-imp-updates-hp-right.html');
 $title[] = array();
 $linktext[] = array();
 $html2 = array();

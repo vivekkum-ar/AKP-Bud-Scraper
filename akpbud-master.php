@@ -1,5 +1,7 @@
 <?php
+//penman: Vivek
 // this can grab result,notification pages
+
 include('simple_html_dom.php');
 $html = file_get_html(htmlspecialchars($_GET["pageurl"]));
 $html2 = $html->find('a.jd_download_url');
